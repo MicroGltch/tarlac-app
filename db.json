@@ -1,0 +1,29 @@
+{
+  "announcements": [
+    {
+      "AnnoID": 1,
+      "Title": "New Campus Launch",
+      "Image": "https://example.com/campus.jpg",
+      "Announcement": "We are excited to announce our new campus in downtown.",
+      "Date": "2025-05-01"
+    },
+    {
+      "AnnoID": 2,
+      "Title": "Holiday Notice",
+      "Image": "https://example.com/holiday.png",
+      "Announcement": "School will be closed on May 5 for Labor Day.",
+      "Date": "2025-05-03"
+    }
+
+  ],
+  "activities": [
+    {
+      "ActID": 1,
+      "Title": "Tree Planting Day",
+      "Image": "https://example.com/tree.jpg",
+      "Activity": "Students will participate in a tree planting event.",
+      "Date": "2025-05-04"
+    }
+  ]
+}
+  

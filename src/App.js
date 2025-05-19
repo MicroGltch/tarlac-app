@@ -1,42 +1,62 @@
-
 import './App.css';
 import React from "react";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Legacy from './pages/Legacy';
+import Milestones from './pages/Milestones';
+import Organization from './pages/Organization';
 
 const FloatingNavbar = () => {
   const navItems = [
-    "Tarlac Medical Society",
-    "About Us",
-    "Our Legacy",
-    "Milestones",
-    "Organization",
+    { name: "About Us", path: "/about" },
+    { name: "Our Legacy", path: "/legacy" },
+    { name: "Milestones", path: "/milestones" },
+    { name: "Organization", path: "/organization" },
   ];
 
   return (
     <div className="floating-navbar">
-      <nav className="bg-[#292f45] text-white rounded-full shadow-lg flex px-4 py-2 gap-3 items-center backdrop-blur-sm">
+      <div className="nav-left">
+        <NavLink to="/">
+          <img src="/logo.png" alt="Tarlac Medical Society Logo" />
+        </NavLink>
+        <div>
+          <div>Tarlac Medical Society</div>
+          <div className="nav-subtitle">A component society of the Philippine Medical Association</div>
+        </div>
+      </div>
+      <nav className="nav-right">
         {navItems.map((item, index) => (
-          <button
+          <NavLink
             key={index}
-            className={`rounded-full text-sm px-4 py-2 transition-colors duration-200 ${
-              item === "Technology" ? "bg-[#3d425a] shadow-inner" : "bg-transparent hover:bg-[#3d425a]"
-            }`}
+            to={item.path}
+            className={({ isActive }) => `
+              rounded-full transition-colors duration-200
+              ${isActive ? "text-gray-900 font-medium" : "text-gray-600 hover:text-gray-900"}
+            `}
           >
-            {item}
-          </button>
+            {item.name}
+          </NavLink>
         ))}
       </nav>
     </div>
   );
 };
 
-const section1 = () =>{
-return(
-  <div className='Section1'>
-    
-  </div>
-);
+const App = () => {
+  return (
+    <BrowserRouter>
+      <FloatingNavbar />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/legacy" element={<Legacy />} />
+        <Route path="/milestones" element={<Milestones />} />
+        <Route path="/organization" element={<Organization />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
-
-
-export default FloatingNavbar;
+export default App;

@@ -1,11 +1,12 @@
 import './App.css';
 import React from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink, Navigate } from "react-router-dom";
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Legacy from './pages/Legacy';
 import Milestones from './pages/Milestones';
 import Organization from './pages/Organization';
+import Footer from './Footer';
 
 const FloatingNavbar = () => {
   const navItems = [
@@ -50,12 +51,14 @@ const App = () => {
     <BrowserRouter>
       <FloatingNavbar />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/legacy" element={<Legacy />} />
         <Route path="/milestones" element={<Milestones />} />
         <Route path="/organization" element={<Organization />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

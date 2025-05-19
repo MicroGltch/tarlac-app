@@ -133,6 +133,10 @@
   padding: 1rem;
 }
 
+.about-right img {
+  margin-bottom: 0.5rem;  /* Adds space below the heart icon */
+}
+
 .announcements-section {
   margin-top: 2rem;
 }
@@ -187,12 +191,23 @@
 }
 
 .video-container {
-  max-width: 800px;
+  position: relative;
+  width: 80%;  
+  max-width: 800px;  
   margin: 0 auto;
-  aspect-ratio: 16/9;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  padding-bottom: 45%; 
+  height: 0;
   overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .placeholder-video {
@@ -283,8 +298,107 @@
   line-height: 1.6;
 }
 
+
+/* Footer CSS */
+.footer {
+  background-color: #d9d9d9;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;  
+  align-items: flex-start;
+  padding: 0 2rem;  
+}
+
+.footer-left {
+  flex: 0 0 auto;  
+  max-width: 400px;
+}
+
+.footer-right {
+  flex: 0 0 auto; 
+  max-width: 600px;
+  margin-left: auto;  
+}
+
+.footer-left img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.footer-left p {
+  margin: 0;
+  color: #2F4858;
+}
+
+.footer-left .subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-middle h3 {
+  color: #2F4858;
+  margin-bottom: 1.5rem;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-middle li {
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.footer-right h3 {
+  color: #2F4858;
+  margin-bottom: 1.5rem;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.sponsors-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
+}
+
 @media (max-width: 768px) {
   .developers-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .footer-right {
+    margin-left: 0;  /* Reset margin on mobile */
+  }
+  
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

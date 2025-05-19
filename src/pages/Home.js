@@ -42,9 +42,13 @@ function Home() {
             <img src="/images/logo.png" alt="About Us Image" />
           </div>
           <div className="about-right">
-            <img src="/images/heart-icon.png" alt="Heart Icon" />
+            <img 
+              src="/images/heart-icon.png" 
+              alt="Heart Icon" 
+              style={{ width: '50px', height: '50px' }}
+            />
             <h2>About Us</h2>
-            <h4>A unified organization providing compassionate, quality healthcare to various communities through partnership and collaborations.</h4>
+            <h6>A unified organization providing compassionate, quality healthcare to various communities through partnership and collaborations.</h6>
           </div>
         </div>
 
@@ -69,9 +73,15 @@ function Home() {
         <div className="hymn-section">
           <h2>Philippine Medical Association Hymn</h2>
           <div className="video-container">
-            <div className="placeholder-video">
-              <div className="play-button"></div>
-            </div>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Uu0cSfl8ctY"
+              title="Philippine Medical Association Hymn"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>

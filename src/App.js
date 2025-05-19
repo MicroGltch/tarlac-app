@@ -9,6 +9,7 @@ import Organization from './pages/Organization';
 
 const FloatingNavbar = () => {
   const navItems = [
+    { name: "Home", path: "/home" },
     { name: "About Us", path: "/about" },
     { name: "Our Legacy", path: "/legacy" },
     { name: "Milestones", path: "/milestones" },

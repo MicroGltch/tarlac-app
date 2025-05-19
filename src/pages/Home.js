@@ -11,29 +11,95 @@ function Home() {
 
   return (
     <div className="home-container">
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="/images/tempimg.png"
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/800x400"
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/800x400"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-      </Carousel>
+      <div className="carousel">
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/images/tempimg.png"
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400"
+              alt="Second slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400"
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+      <div className="content-overlap">
+        <div className="about-section">
+          <div className="about-left">
+            <img src="/images/logo.png" alt="About Us Image" />
+          </div>
+          <div className="about-right">
+            <img src="/images/heart-icon.png" alt="Heart Icon" />
+            <h2>About Us</h2>
+            <h4>A unified organization providing compassionate, quality healthcare to various communities through partnership and collaborations.</h4>
+          </div>
+        </div>
+
+        <div className="announcements-section">
+          <h2>Announcements and Activities</h2>
+          <div className="announcements-grid">
+            <div className="news-card">
+              <img src="/images/news.jpg" alt="News" />
+              <h3>News</h3>
+              <p>Hear about the latest news from Tarlac Medical Society!</p>
+              <button className="more-news">MORE NEWS</button>
+            </div>
+            <div className="activities-card">
+              <img src="/images/activities.jpg" alt="Activities" />
+              <h3>Activities</h3>
+              <p>Click the link below to check the calendar of activities</p>
+              <button className="more-news">MORE NEWS</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="hymn-section">
+          <h2>Philippine Medical Association Hymn</h2>
+          <div className="video-container">
+            <div className="placeholder-video">
+              <div className="play-button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="developers-section">
+          <h2>Meet the Developers</h2>
+          <div className="developers-grid">
+            <div className="developer-card">
+              <div className="developer-image">
+                <img src="/images/developer1.jpg" alt="Front-end developer" />
+              </div>
+              <div className="developer-info">
+                <h3>Front-end developer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi a nisl fermentum varius. Cras elementum dui sapien, eu varius dolor tincidunt vitae. Morbi at ipsum a mauris vulputate aliquam vel id diam.</p>
+              </div>
+            </div>
+
+            <div className="developer-card">
+              <div className="developer-image">
+                <img src="/images/developer2.jpg" alt="Front-end developer" />
+              </div>
+              <div className="developer-info">
+                <h3>Front-end developer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi a nisl fermentum varius. Cras elementum dui sapien, eu varius dolor tincidunt vitae. Morbi at ipsum a mauris vulputate aliquam vel id diam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }

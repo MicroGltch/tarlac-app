@@ -19,7 +19,7 @@ const ContactUs = () => {
 
       {/* Contact Form Section */}
       <div className="contact-content-overlap">
-        <div className="contact-form-section container shadow p-5 bg-white rounded">
+        <div className="contact-form-section container shadow p-5 bg-white rounded" style={{maxWidth: "890px"}}>
           <h2 className="contact-form-heading">Send Us a Message</h2>
           <form className="row g-4">
             <div className="col-md-6">

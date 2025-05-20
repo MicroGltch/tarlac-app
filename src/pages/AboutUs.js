@@ -28,7 +28,7 @@ function AboutUs() {
         </div>
       </div>
 
-      <div className="content-overlap">
+      <div className="content-overlap" style={{maxWidth: "1250px"}}>
         <section className="about-content-section">
           <h2 className="about-section-title">Our Vision</h2>
           <p className="about-lead">

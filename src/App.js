@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs';
 import Legacy from './pages/Legacy';
 import Milestones from './pages/Milestones';
 import Organization from './pages/Organization';
+import ContactUs from './pages/ContactUs';
 import Footer from './Footer';
 
 const FloatingNavbar = () => {
@@ -15,6 +16,7 @@ const FloatingNavbar = () => {
     { name: "Our Legacy", path: "/legacy" },
     { name: "Milestones", path: "/milestones" },
     { name: "Organization", path: "/organization" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -57,6 +59,7 @@ const App = () => {
         <Route path="/legacy" element={<Legacy />} />
         <Route path="/milestones" element={<Milestones />} />
         <Route path="/organization" element={<Organization />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer />
     </BrowserRouter>

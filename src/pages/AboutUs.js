@@ -17,7 +17,7 @@ function AboutUs() {
   return (
     <div className="about-page">
      <section className="about-hero-section">
-        <div className="overlay">
+        <div className="about-overlay">
           <h1>About Us</h1>
           <p>Tarlac Medical Society – Vision, Mission and Objectives</p>
         </div>
@@ -25,7 +25,7 @@ function AboutUs() {
 
       <section className="about-content-section">
         <h2 className="about-section-title">Our Vision</h2>
-        <p className="lead">
+        <p className="about-lead">
           To cultivate a community of Tarlac physicians committed to excellence in medical knowledge and expertise by fostering continuous learning, advancing research, and advocating best practices in patient care.
         </p>
       </section>
@@ -34,7 +34,7 @@ function AboutUs() {
       <section className="about-content-section">
         <div className="about-container">
           <h2 className="about-section-title">Our Mission</h2>
-          <p className="lead">
+          <p className="about-lead">
             TMS is a unified organization dedicated to serving its members by offering benefits, fostering professional growth while protecting their best interest in accordance with both Divine and Natural laws. Wellness, disease prevention and quality healthcare are delivered with compassion to the different communities through collaboration with private organizations and government agencies.
           </p>
         </div>

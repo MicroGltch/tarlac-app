@@ -48,7 +48,7 @@
   padding: 0.5rem 0.75rem;
   border-radius: 9999px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   transition: all 0.2s ease-in-out;
 }
@@ -79,13 +79,13 @@
 
 .carousel {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   position: relative;
 }
 
 .carousel-item {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
 }
 
 .carousel-item img {
@@ -131,6 +131,10 @@
 .about-right {
   flex: 1;
   padding: 1rem;
+}
+
+.about-right img {
+  margin-bottom: 0.5rem;  /* Adds space below the heart icon */
 }
 
 .announcements-section {
@@ -187,12 +191,23 @@
 }
 
 .video-container {
-  max-width: 800px;
+  position: relative;
+  width: 80%;  
+  max-width: 800px;  
   margin: 0 auto;
-  aspect-ratio: 16/9;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  padding-bottom: 45%; 
+  height: 0;
   overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .placeholder-video {
@@ -246,161 +261,364 @@
   background-color: #e5e7eb;
 }
 
-.developers-grid {
+.developers-container {
+  position: relative;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.developers-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.scroll-button:hover {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+.scroll-button span {
+  font-size: 20px;
+  color: #4a5568;
+}
+
+/* Hide scrollbar but keep functionality */
+.developers-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.developers-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.footer {
+  background-color: #d9d9d9;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;  
+  align-items: flex-start;
+  padding: 0 2rem;  
+}
+
+.footer-left {
+  flex: 0 0 auto;  
+  max-width: 400px;
+}
+
+.footer-right {
+  flex: 0 0 auto; 
+  max-width: 600px;
+  margin-left: auto;  
+}
+
+.footer-left img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.footer-left p {
+  margin: 0;
+  color: #2F4858;
+}
+
+.footer-left .subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-middle h3 {
+  color: #2F4858;
+  margin-bottom: 1.5rem;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-middle li {
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.footer-right h3 {
+  color: #2F4858;
+  margin-bottom: 1.5rem;
+}
+
+.sponsors-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
 }
 
-.developer-card {
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+.sponsors-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.testimonial-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonials-slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.testimonials-container {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-card {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  opacity: 0;
+  transform: scale(0.8) translateX(-100%);
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 3;
+  visibility: visible;
+}
+
+.testimonial-card.prev {
+  opacity: 0.5;
+  transform: scale(0.8) translateX(-75%);
+  z-index: 2;
+  visibility: visible;
+}
+
+.testimonial-card.next {
+  opacity: 0.5;
+  transform: scale(0.8) translateX(75%);
+  z-index: 2;
+  visibility: visible;
+}
+
+.testimonial-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .developer-image {
+  width: 100px;
+  height: 100px;
   margin-bottom: 1.5rem;
 }
 
 .developer-image img {
   width: 100%;
-  height: 300px;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .developer-info h3 {
-  color: #2F4858;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.developer-info .role {
+  color: #718096;
   margin-bottom: 1rem;
 }
 
-.developer-info p {
-  color: #6b7280;
+.developer-info .testimonial {
+  font-style: italic;
+  color: #4a5568;
   line-height: 1.6;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button.prev {
+  left: 10%;
+}
+
+.nav-button.next {
+  right: 10%;
+}
+
+/* Legacy Section CSS */
+.legacy-container {
+  position: relative;
+  width: 100%;
+}
+
+.hero-image {
+  position: relative;
+  width: 100vw;
+  height: 65vh;
+}
+
+.hero-image img {
+  width: 100vw;
+  height: 65vh;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;  /* Changed from top: 50% to bottom: 40px */
+  left: 50%;
+  transform: translateX(-50%);  /* Removed translateY since we're using bottom */
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero-text h1, h4 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
   .developers-grid {
     grid-template-columns: 1fr;
   }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .footer-right {
+    margin-left: 0;  /* Reset margin on mobile */
+  }
+  
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .developer-image {
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-image {
+    height: 300px;
+  }
+  
+  .legacy-container .content-overlap {
+    margin-top: -30px;
+  }
+  
+  .hero-text {
+    bottom: 30px;  /* Adjust for mobile */
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+  }
 }
 
-/**About Page CSS */
-.about-page {
-  max-width: 100%;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  color: #333;
-}
+/* Milestones Section CSS */
 
-/* Header */
-/* Hero Section */
-.about-hero-section {
-  background: url("https://via.placeholder.com/800x400") center center/cover no-repeat;
-  height: 60vh;
-  position: relative;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.about-hero-section .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.about-header-section h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #007bff;
-}
-.about-hero-section h1,
-.about-hero-section p {
-  z-index: 2;
-  margin-left: 5%;
-}
-
-/* Section Titles */
-.about-section-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-/* Content Section (Vision & Mission) */
-.about-content-section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  margin-bottom: 0; /* Remove extra margin if inherited */
-}
-
-.about-content-section .lead {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 0;
-}
-
-/* Optional: Add a subtle fade-in effect */
-.about-content-section,
-.about-hero-section .overlay {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Objectives */
-.objectives {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.objectives h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  margin-left: 20%;
-  padding: 5rem;
-}
-
-.objective-item {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.objective-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-icon {
-  color: #007bff;
-  font-size: 1.8rem;
-  flex-shrink: 0;
-}
-
-.objective-item p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-}
+/* Organization Section CSS */
 

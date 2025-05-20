@@ -4,9 +4,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
   const [index, setIndex] = useState(0);
+  const [currentDev, setCurrentDev] = useState(0);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
+  };
+
+  const developers = [
+    {
+      name: "Belleca, Gracel Anne",
+      image: "/images/developer1.jpg",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Front-end Developer"
+    },
+    {
+      name: "De Pano, Johanna Anne",
+      image: "/images/developer2.jpg",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Front-end Developer"
+    },
+    {
+      name: "Rejano, Sydney Isabelle",
+      image: "/images/developer3.jpg",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Front-end Developer"
+    }
+  ];
+
+  const nextDev = () => {
+    setCurrentDev((prev) => (prev + 1) % developers.length);
+  };
+
+  const prevDev = () => {
+    setCurrentDev((prev) => (prev - 1 + developers.length) % developers.length);
   };
 
   return (
@@ -42,9 +72,13 @@ function Home() {
             <img src="/images/logo.png" alt="About Us Image" />
           </div>
           <div className="about-right">
-            <img src="/images/heart-icon.png" alt="Heart Icon" />
+            <img 
+              src="/images/heart-icon.png" 
+              alt="Heart Icon" 
+              style={{ width: '50px', height: '50px' }}
+            />
             <h2>About Us</h2>
-            <h4>A unified organization providing compassionate, quality healthcare to various communities through partnership and collaborations.</h4>
+            <p>A unified organization providing compassionate, quality healthcare to various communities through partnership and collaborations.</p>
           </div>
         </div>
 
@@ -69,37 +103,49 @@ function Home() {
         <div className="hymn-section">
           <h2>Philippine Medical Association Hymn</h2>
           <div className="video-container">
-            <div className="placeholder-video">
-              <div className="play-button"></div>
-            </div>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Uu0cSfl8ctY"
+              title="Philippine Medical Association Hymn"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
 
       <div className="developers-section">
-          <h2>Meet the Developers</h2>
-          <div className="developers-grid">
-            <div className="developer-card">
-              <div className="developer-image">
-                <img src="/images/developer1.jpg" alt="Front-end developer" />
+        <h2>Meet the Developers</h2>
+        <div className="testimonials-slider">
+          <button className="nav-button prev" onClick={prevDev}>&#8592;</button>
+          <div className="testimonials-container">
+            {developers.map((dev, index) => (
+              <div 
+                key={index} 
+                className={`testimonial-card ${
+                  index === currentDev ? 'active' : 
+                  index === (currentDev - 1 + developers.length) % developers.length ? 'prev' :
+                  index === (currentDev + 1) % developers.length ? 'next' : ''
+                }`}
+              >
+                <div className="testimonial-content">
+                  <div className="developer-image">
+                    <img src={dev.image} alt={dev.name} />
+                  </div>
+                  <div className="developer-info">
+                    <h3>{dev.name}</h3>
+                    <p className="role">{dev.role}</p>
+                    <p className="testimonial">{dev.testimonial}</p>
+                  </div>
+                </div>
               </div>
-              <div className="developer-info">
-                <h3>Front-end developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi a nisl fermentum varius. Cras elementum dui sapien, eu varius dolor tincidunt vitae. Morbi at ipsum a mauris vulputate aliquam vel id diam.</p>
-              </div>
-            </div>
-
-            <div className="developer-card">
-              <div className="developer-image">
-                <img src="/images/developer2.jpg" alt="Front-end developer" />
-              </div>
-              <div className="developer-info">
-                <h3>Front-end developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi a nisl fermentum varius. Cras elementum dui sapien, eu varius dolor tincidunt vitae. Morbi at ipsum a mauris vulputate aliquam vel id diam.</p>
-              </div>
-            </div>
+            ))}
           </div>
+          <button className="nav-button next" onClick={nextDev}>&#8594;</button>
         </div>
+      </div>
     </div>
   );
 }

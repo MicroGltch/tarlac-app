@@ -1,18 +1,17 @@
 import React from 'react';
 
-const Legacy = () => {
+const Activities = () => {
   return (
-    <div className="legacy-container">
+    <div className="Activities-container">
       <div className="hero-image">
         <img
           className="w-100"
           src="/images/legacy-hero.jpg"
-          alt="Tarlac Medical Society Legacy"
+          alt="Tarlac Medical Society Activities"
         />
         <div className="hero-text">
-          <h1>Our Legacy</h1>
-          <h4>History/Archives/Stories</h4>
-          <p>Browse our rich history, current events, and write-ups from our Tarlac Physicians</p>
+          <h1>Activities</h1>
+          <p>Tarlac Medical Society's Activities</p>
         </div>
       </div>
       <div className="content-overlap">
@@ -25,4 +24,4 @@ const Legacy = () => {
   );
 };
 
-export default Legacy;
+export default Activities;

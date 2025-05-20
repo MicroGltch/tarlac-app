@@ -767,41 +767,32 @@
 .contact-form-section {
   background-color: #fff;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
 .contact-form-heading {
   text-align: center;
   color: #2F4858;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  margin-bottom: 1.5rem;  /* Reduced from 2rem */
+  font-size: 1.6rem;  /* Reduced from 1.8rem */
   font-weight: 600;
 }
 
-/* Inputs & Textarea */
-.contact-form-label {
-  font-weight: 500;
-  color: #2F4858;
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
 .contact-form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;  /* Reduced from 1.5rem */
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;  /* Reduced from 0.75rem 1rem */
   border-radius: 8px;
   border: 1px solid #ced4da;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.95rem;  /* Reduced from 1rem */
 }
 
 input:focus,

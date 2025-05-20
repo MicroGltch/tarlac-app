@@ -288,3 +288,119 @@
     grid-template-columns: 1fr;
   }
 }
+
+/**About Page CSS */
+.about-page {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+/* Hero Section */
+.about-hero-section {
+  background: url("https://via.placeholder.com/800x400") center center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-hero-section .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-header-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+}
+.about-hero-section h1,
+.about-hero-section p {
+  z-index: 2;
+  margin-left: 5%;
+}
+
+/* Section Titles */
+.about-section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Content Section (Vision & Mission) */
+.about-content-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom: 0; /* Remove extra margin if inherited */
+}
+
+.about-content-section .lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Optional: Add a subtle fade-in effect */
+.about-content-section,
+.about-hero-section .overlay {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Objectives */
+.objectives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.objectives h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 20%;
+  padding: 5rem;
+}
+
+.objective-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.objective-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-icon {
+  color: #007bff;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.objective-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+

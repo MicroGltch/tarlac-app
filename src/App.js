@@ -6,7 +6,8 @@ import AboutUs from './pages/AboutUs';
 import News from './pages/News';
 import Activities from './pages/Activities';
 import ContactUs from './pages/ContactUs';
-import Footer from './Footer';
+import Footer from './components/Footer';
+import Admin from './pages/Admin';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ const FloatingNavbar = () => {
     { name: "News", path: "/news" },
     { name: "Activities", path: "/activities" },
     { name: "Contact Us", path: "/contact" },
+    { name: "Admin", path: "/admin" },
   ];
 
   return (
@@ -110,6 +112,7 @@ const App = () => {
         <Route path="/news" element={<News />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

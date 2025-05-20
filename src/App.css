@@ -720,3 +720,128 @@
 
 /* Organization Section CSS */
 
+/*Conatct Us Section CSS */
+/* Container Setup */
+.contactus-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Image Styles */
+.contact-hero-image {
+  position: relative;
+  height: 500px; /* Increased height */
+  width: 100%;
+  overflow: hidden;
+  background-color: #2F4858; /* Fallback color */
+}
+
+.contact-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* Added slight overlay effect */
+  transition: transform 0.3s ease;
+}
+
+.contact-hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+}
+
+.contact-content-overlap {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+/* Form Section */
+.contact-form-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  text-align: center;
+  color: #2F4858;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Inputs & Textarea */
+.contact-form-label {
+  font-weight: 500;
+  color: #2F4858;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-form-group {
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2F4858;
+  outline: none;
+  box-shadow: 0 0 0 0.15rem rgba(47, 72, 88, 0.25);
+}
+
+/* Contact Button Styles */
+.contact-btn {
+  background-color: #2F4858;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+  display: block;
+  box-shadow: 0 2px 4px rgba(47, 72, 88, 0.2);
+}
+
+.contact-btn:hover {
+  background-color: #243845;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(47, 72, 88, 0.3);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(47, 72, 88, 0.2);
+}
+
+.contact-btn:disabled {
+  background-color: #a0aeb8;
+  cursor: not-allowed;
+  transform: none;
+}

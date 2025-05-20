@@ -19,7 +19,7 @@ function AboutUs() {
       <div className="hero-image">
         <img
           className="w-100"
-          src="/images/about-hero.jpg"
+          src="\images\about-hero.png"
           alt="About Tarlac Medical Society"
         />
         <div className="hero-text">

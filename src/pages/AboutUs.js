@@ -16,41 +16,45 @@ function AboutUs() {
 
   return (
     <div className="about-page">
-     <section className="about-hero-section">
-        <div className="about-overlay">
+      <div className="hero-image">
+        <img
+          className="w-100"
+          src="/images/about-hero.jpg"
+          alt="About Tarlac Medical Society"
+        />
+        <div className="hero-text">
           <h1>About Us</h1>
           <p>Tarlac Medical Society – Vision, Mission and Objectives</p>
         </div>
-      </section>
+      </div>
 
-      <section className="about-content-section">
-        <h2 className="about-section-title">Our Vision</h2>
-        <p className="about-lead">
-          To cultivate a community of Tarlac physicians committed to excellence in medical knowledge and expertise by fostering continuous learning, advancing research, and advocating best practices in patient care.
-        </p>
-      </section>
+      <div className="content-overlap">
+        <section className="about-content-section">
+          <h2 className="about-section-title">Our Vision</h2>
+          <p className="about-lead">
+            To cultivate a community of Tarlac physicians committed to excellence in medical knowledge and expertise by fostering continuous learning, advancing research, and advocating best practices in patient care.
+          </p>
+        </section>
 
-      {/* Mission */}
-      <section className="about-content-section">
-        <div className="about-container">
+        <section className="about-content-section">
           <h2 className="about-section-title">Our Mission</h2>
           <p className="about-lead">
             TMS is a unified organization dedicated to serving its members by offering benefits, fostering professional growth while protecting their best interest in accordance with both Divine and Natural laws. Wellness, disease prevention and quality healthcare are delivered with compassion to the different communities through collaboration with private organizations and government agencies.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section className="about-content-section">
-        <h2>Objectives</h2>
-        <div className="objectives">
-          {objectives.map((item, index) => (
-            <div key={index} className="objective-item">
-              <div className="about-icon">{item.icon}</div>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className="about-content-section">
+          <h2>Objectives</h2>
+          <div className="objectives">
+            {objectives.map((item, index) => (
+              <div key={index} className="objective-item">
+                <div className="about-icon">{item.icon}</div>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

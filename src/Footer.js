@@ -8,15 +8,6 @@ const Footer = () => {
           <img src="/logo.png" alt="Tarlac Medical Society Logo" />
           <p>Tarlac Medical Society</p>
           <p className="subtitle">A component society of the Philippine Medical Association</p>
-          {/* <div className="social-links">
-            <a href="https://www.facebook.com/tms.tarlac" target="_blank" rel="noopener noreferrer">
-              <img 
-                src="/images/facebook.png" 
-                alt="Facebook" 
-                style={{ width: '50px', height: '50px' }}
-              />
-            </a>
-          </div> */}
         </div>
 
         <div className="footer-right">

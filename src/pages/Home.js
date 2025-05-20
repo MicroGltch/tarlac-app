@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
@@ -89,13 +90,19 @@ function Home() {
               <img src="/images/news.jpg" alt="News" />
               <h3>News</h3>
               <p>Hear about the latest news from Tarlac Medical Society!</p>
-              <button className="more-news">MORE NEWS</button>
+              <Link to="/news" className="more-news">
+                MORE NEWS 
+                <span className="arrow">→</span>
+              </Link>
             </div>
             <div className="activities-card">
               <img src="/images/activities.jpg" alt="Activities" />
               <h3>Activities</h3>
               <p>Click the link below to check the calendar of activities</p>
-              <button className="more-news">MORE NEWS</button>
+              <Link to="/activities" className="more-news">
+                CALENDAR OF ACTIVITIES 
+                <span className="arrow">→</span>
+              </Link>
             </div>
           </div>
         </div>
